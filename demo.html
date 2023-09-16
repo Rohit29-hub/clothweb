@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin : 0%;
+            padding: 0%;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 90vh;
+        }
+        .container{
+            padding: 5px;
+            width: 90%;
+            margin: auto;
+            height: 250px;
+            background-color: red;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            box-shadow: 1px 1px 7px grey;
+        }
+        
+        ul{
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+            margin: auto;
+            height: 250px;
+            list-style: none;
+            overflow-x: scroll;
+
+        }
+        
+        .items{
+            width: 250px;
+            height: 100%;
+            background: aqua;
+            flex-shrink: 0;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul id="ul">
+            <li class="items"></li>
+            <li class="items"></li>
+            <li class="items"></li>
+            <li class="items"></li>
+            <li class="items"></li>
+            <li class="items"></li>
+            <li class="items"></li>
+            <li class="items"></li>
+            <li class="items"></li>
+            <li class="items"></li>
+        </ul>
+    </div>
+    <button id="prev" onclick="prev()">prev</button>
+    <button id="next" onclick="next()">next</button>
+
+    <script>
+        
+        const items = document.querySelectorAll('.items');
+        items.forEach((ele, index)=>{
+                ele.style.background = 'rgba(0,0,0,0.5)'
+                ele.innerHTML = `Index ${index+1}`;
+                ele.style.color = 'white'
+        })
+        
+        
+    </script>
+</body>
+</html>
